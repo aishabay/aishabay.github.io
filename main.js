@@ -109,11 +109,12 @@ function insertFooter() {
   // create social buttons
   let soc = document.createElement("div");
   let a = document.createElement("a");
-  let fb = "<i class='fa-brands fa-facebook fa-inverse fa-2xl'></i>";
+  let fb = "<i class='fa-brands fa-linkedin fa-inverse fa-2xl'></i>";
   a.innerHTML = fb;
   a.classList.add("social");
   a.classList.add("fb");
-  a.setAttribute("href", "https://facebook.com");
+  a.setAttribute("href", "https://www.linkedin.com/in/madina-bekisheva-75966b212");
+  a.setAttribute("target", "_blank");
   soc.appendChild(a);
   soc_box.appendChild(soc);
 
@@ -124,7 +125,8 @@ function insertFooter() {
   a.innerHTML = insta;
   a.classList.add("social");
   a.classList.add("insta");
-  a.setAttribute("href", "https://instagram.com");
+  a.setAttribute("href", "https://www.instagram.com/mdb_just/");
+  a.setAttribute("target", "_blank");
   soc.appendChild(a);
   soc_box.appendChild(soc);
 
@@ -135,11 +137,22 @@ function insertFooter() {
   a.innerHTML = git;
   a.classList.add("social");
   a.classList.add("git");
-  a.setAttribute("href", "https://github.com");
+  a.setAttribute("href", "https://github.com/madinabekisheva");
+  a.setAttribute("target", "_blank");
   soc.appendChild(a);
   soc_box.appendChild(soc);
 
   ft.appendChild(soc_box);
+
+  let address = document.createElement("div");
+  address.innerHTML = "Nazarbayev University, Qabanbay Batyr Ave 53, Astana, Kazakhstan, 010000";
+  address.classList.add("footer-address");
+  ft.appendChild(address);
+
+  let email = document.createElement("div");
+  email.innerHTML = "madina.bekisheva@nu.edu.kz";
+  email.classList.add("footer-email");
+  ft.appendChild(email);
 }
 
 insertFooter();

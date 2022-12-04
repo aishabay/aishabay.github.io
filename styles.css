@@ -106,11 +106,11 @@ section>div {
 /* FOOTER */
 footer {
   padding: 1rem;
-  padding-bottom: 10rem;
+  /* padding-bottom: 10rem; */
   margin-top: 5vh;
   position: sticky;
   top: 100vh;
-  height: 20vh;
+  min-height: 20vh;
   display: grid;
   grid-template-columns: 50px 50px 50px auto;
 
@@ -153,24 +153,28 @@ footer {
   font-size: 1.8rem;
 }
 
-/* .fb {
-  grid-column: 1 / 2;
-  grid-row: 2 / 3;
-}
-
-.insta {
-  grid-column: 2 / 3;
-  grid-row: 2 / 3;
-}
-
-.git {
-  grid-column: 3 / 4;
-  grid-row: 2 / 3;
-} */
-
 footer a {
   color: white;
   text-decoration: none;
+}
+
+.footer-address {
+  margin-top: 5vh;
+  font-size: 1rem;
+  font-weight: bold;
+  grid-column: 1 / 5;
+  grid-row: 3;
+  justify-self: center;
+}
+
+.footer-email {
+  margin-top: 10px;
+  margin-bottom: 3vh;
+  font-size: 1rem;
+  font-weight: bold;
+  grid-column: 1 / 5;
+  grid-row: 4;
+  justify-self: center;
 }
 
 /*******************************/

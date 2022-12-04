@@ -102,6 +102,16 @@ function insertFooter() {
     soc_box.appendChild(soc);
 
     ft.appendChild(soc_box);
+
+    let address = document.createElement("div");
+    address.innerHTML = "Nazarbayev University, Qabanbay Batyr Ave 53, Astana, Kazakhstan, 010000";
+    address.classList.add("footer-address");
+    ft.appendChild(address);
+  
+    let email = document.createElement("div");
+    email.innerHTML = "madina.bekisheva@nu.edu.kz";
+    email.classList.add("footer-email");
+    ft.appendChild(email);
 }
 
 insertFooter();
