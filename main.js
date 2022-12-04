@@ -270,16 +270,33 @@ function logSubmit(e) {
   const message = document.getElementById('message').value
 
   const body = {
-    email, name, number, message
+    email, name, number, message, id: new Date().getTime()
   };
-  localStorage.setItem(new Date().getTime(), JSON.stringify(body))
 
-  document.getElementById('email').value = "";
-  document.getElementById('name').value = "";
-  document.getElementById('number').value = "";
-  document.getElementById('message').value = "";
-
+  addMail(body);
 }
 
 const form = document.getElementById('myForm');
 form.addEventListener('submit', logSubmit);
+
+
+function addMail(body) {
+  fetch('http://104.248.97.115:3000/mails', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(body)
+  })
+}
+
+//getting mails
+fetch('http://104.248.97.115:3000/mails', {
+})
+  .then((response) => response.json())
+  .then((data) => console.log(data));
+
+// delete mail
+// fetch('http://104.248.97.115:3000/mails/<сюда вставить ID>', {
+//   method: 'DELETE',
+// })
