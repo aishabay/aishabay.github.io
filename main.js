@@ -40,7 +40,7 @@ function insertNavBar() {
   let a = document.createElement("a");
   a.innerHTML = "<span id='me'>Resume</span>";
   a.classList.add("a-nav");
-  a.setAttribute("href", "index.html");
+  a.setAttribute("href", "https://aishabay.github.io/index.html");
   li.appendChild(a);
   ul.appendChild(li);
 
@@ -55,7 +55,7 @@ function insertNavBar() {
   a = document.createElement("a");
   a.innerHTML = "<span id='me'>Requests</span>";
   a.classList.add("a-nav");
-  a.setAttribute("href", "pages/requests.html");
+  a.setAttribute("href", "https://aishabay.github.io/pages/requests.html");
   li.appendChild(a);
   ul.appendChild(li);
 
