@@ -152,26 +152,13 @@ function upperCase() {
 }
 ////////////////////////////////////////////////
 
-
-function addMail(body) {
-    fetch('http://104.248.97.115:3000/mails', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(body)
-    })
-}
-
 //getting mails
 
 function getMails() {
-    fetch('http://104.248.97.115:3000/mails', {
-        referrerPolicy: 'no-referrer'
-    })
-        .then((response) => response.json())
-        .then((mails) => {
-            document.getElementById('mails').innerHTML = `
+    const mailsString = localStorage.getItem('mails');
+    const mails = mailsString?.length ? JSON.parse(mailsString) : [];
+
+    document.getElementById('mails').innerHTML = `
             <div class="mail">
                 <div class="email">email</div>
                 <div class="number">number</div>
@@ -186,19 +173,14 @@ function getMails() {
                 <div class="message">${mail.message}</div>
                 <button class="delete" onclick="deleteMail(${mail.id})">DELETE</button>
             </div>`).join('')
-        });
 }
 
 function deleteMail(id) {
-    fetch('http://104.248.97.115:3000/mails/' + id, {
-        method: 'DELETE',
-    }).then(() => {
-        getMails();
-    })
+    const mails = JSON.parse(localStorage.getItem('mails'));
+    const newMails = mails.filter(m => m.id !== id);
+    localStorage.setItem('mails', JSON.stringify(newMails));
+    getMails();
 }
 
 getMails();
-
-
-  // delete mail
 

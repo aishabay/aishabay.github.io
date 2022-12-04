@@ -281,20 +281,13 @@ form.addEventListener('submit', logSubmit);
 
 
 function addMail(body) {
-  fetch('http://104.248.97.115:3000/mails', {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json'
-    },
-    body: JSON.stringify(body)
-  })
-}
+  const mailsString = localStorage.getItem('mails');
+  const mails = mailsString?.length ? JSON.parse(mailsString) : [];
 
-//getting mails
-fetch('http://104.248.97.115:3000/mails', {
-})
-  .then((response) => response.json())
-  .then((data) => console.log(data));
+  mails.push(body)
+
+  localStorage.setItem('mails', JSON.stringify(mails));
+}
 
 // delete mail
 // fetch('http://104.248.97.115:3000/mails/<сюда вставить ID>', {
