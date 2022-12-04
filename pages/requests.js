@@ -167,6 +167,7 @@ function addMail(body) {
 
 function getMails() {
     fetch('http://104.248.97.115:3000/mails', {
+        referrerPolicy: 'no-referrer'
     })
         .then((response) => response.json())
         .then((mails) => {
